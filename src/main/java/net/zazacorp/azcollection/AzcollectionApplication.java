@@ -14,8 +14,8 @@ public class AzcollectionApplication {
 	}
 
 	@GetMapping("/")
-	public String greet(){
-		return "Hello";
+	public String home(){
+		return "Hello World";
 	}
 
 }
