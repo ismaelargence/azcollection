@@ -29,7 +29,7 @@ public class AzcollectionApplication {
 	//Utiliser pour insert des données dans la BD
 
 	@Bean
-	CommandLineRunner runner(PostRepository repository){
+	CommandLineRunner runner(UserRepository repository){
 		return args -> {
 			User testAdmin = new User(
 					"kappa",
@@ -37,9 +37,9 @@ public class AzcollectionApplication {
 					"az", Role.SuperAdmin
 			);
 
-			Post testPost = new Post("Descr","1234567890", "0987654321");
+			Post testPost = new Post("test","Descr","1234567890", "0987654321");
 
-			//repository.insert(testPost);
+			//repository.insert(testAdmin);
 		};
 	}
 

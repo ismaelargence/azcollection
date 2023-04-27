@@ -1,6 +1,7 @@
 package net.zazacorp.azcollection.post;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.sql.Blob;
@@ -11,25 +12,20 @@ import java.time.ZonedDateTime;
 public class Post {
     @Id
     private String id;
+    @Indexed(unique = true)
+    private String name;
     private String description;
     private String longitude;
     private String latitude;
    // private Blob picture;
     private LocalDateTime created;
 
-    public Post(String description, String longitude, String latitude) {
+    public Post(String name, String description, String longitude, String latitude) {
+        this.name = name;
         this.description = description;
         this.longitude = longitude;
         this.latitude = latitude;
         //this.picture = picture;
         this.created = LocalDateTime.now();
     }
-
-    public Post(String longitude, String latitude) {
-        this.longitude = longitude;
-        this.latitude = latitude;
-       // this.picture = picture;
-        this.created = LocalDateTime.now();
-    }
-
 }

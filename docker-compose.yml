@@ -9,7 +9,7 @@ services:
       - MONGO_INITDB_ROOT_USERNAME=rootuser
       - MONGO_INITDB_ROOT_PASSWORD=rootpass
     volumes:
-      - data:/data/db
+      - dbdata:/data/db/
   mongo-express:
     image: mongo-express
     container_name: mongo-express
@@ -21,7 +21,12 @@ services:
       ME_CONFIG_MONGODB_ADMINPASSWORD: rootpass
       ME_CONFIG_MONGODB_URL: mongodb://rootuser:rootpass@mongodb:27017/
 volumes:
-  data: {}
+  dbdata:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/dbdata/'
 
 networks:
   default:
