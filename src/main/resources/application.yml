@@ -1,2 +1,18 @@
 server:
   port: 3000
+
+spring:
+  data:
+    mongodb:
+      authentication-database:
+        admin
+      username:
+        rootuser
+      password:
+        rootpass
+      database:
+        azdatabase
+      port:
+        27017
+      host:
+        localhost
