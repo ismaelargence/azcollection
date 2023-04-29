@@ -1,7 +1,8 @@
 package net.zazacorp.azcollection.post;
 
-import net.zazacorp.azcollection.user.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface PostRepository extends MongoRepository<Post, String> {
 }
