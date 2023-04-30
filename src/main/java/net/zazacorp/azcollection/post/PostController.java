@@ -11,10 +11,10 @@ import java.util.List;
 @RequestMapping(path = "api/v1/post")
 @AllArgsConstructor //Génère automatiquement un constructeur avec tous les attributs
 public class PostController {
-    private final PostService postService;
+    private final PostServiceImpl postServiceImpl;
 
     @GetMapping
     public List<Post> getPosts(){
-        return this.postService.getPosts();
+        return this.postServiceImpl.getAllPost();
     }
 }

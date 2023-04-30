@@ -13,8 +13,5 @@ public class AzcollectionApplication {
 		SpringApplication.run(AzcollectionApplication.class, args);
 	}
 
-	@GetMapping("/")
-	public String home(){
-		return "Hello World";
-	}
+
 }
